@@ -5,11 +5,13 @@ import { HttpCode } from "./lib/constants";
 
 import contactsRouter from "./routes/api/contacts";
 import authRouter from "./routes/api/auth";
+import helmet from "helmet";
 
 const app = express();
 
 const formatsLogger = app.get("env") === "development" ? "dev" : "short";
 
+app.use(helmet());
 app.use(logger(formatsLogger));
 app.use(cors());
 app.use(express.json());
