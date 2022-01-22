@@ -1,4 +1,3 @@
-// import { token } from "morgan";
 import User from "../model/user";
 
 const findById = async (id) => {

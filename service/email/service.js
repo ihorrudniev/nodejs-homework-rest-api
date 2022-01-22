@@ -22,7 +22,7 @@ class EmailService {
     const mailGenerator = new Mailgen({
       theme: "default",
       product: {
-        name: "groupe-35 FullStackOnline",
+        name: "groupe-35",
         link: this.link,
       },
     });

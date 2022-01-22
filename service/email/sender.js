@@ -14,7 +14,7 @@ class SenderSendgrid {
 class SenderNodemailer {
   async send(msg) {
     const config = {
-      host: "smtp.gmail.com",
+      host: "smtp.meta.ua",
       port: 465,
       secure: true, // upgrade later with STARTTLS
       auth: {

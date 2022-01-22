@@ -43,7 +43,7 @@ const uploadAvatar = async (req, res, next) => {
 };
 
 const verifyUser = async (req, res, next) => {
-  const verifyToken = req.params.tokken;
+  const verifyToken = req.params.token;
   const userFromToken = repositoryUsers.findByVerifyToken(verifyToken);
 
   if (userFromToken) {
@@ -62,18 +62,17 @@ const verifyUser = async (req, res, next) => {
 };
 
 const repeatEmailForVerifyUser = async (req, res, next) => {
-  const uploadService = new UploadFileService(
-    LocalFileStorage,
-    req.file,
-    req.user
-  );
-
-  const avatarUrl = await uploadService.updateAvatar();
-  res.status(HttpCode.OK).json({
-    status: "success",
-    code: HttpCode.OK,
-    data: { avatarUrl },
-  });
+  // const uploadService = new UploadFileService(
+  //   LocalFileStorage,
+  //   req.file,
+  //   req.user
+  // );
+  // const avatarUrl = await uploadService.updateAvatar();
+  // res.status(HttpCode.OK).json({
+  //   status: "success",
+  //   code: HttpCode.OK,
+  //   data: { avatarUrl },
+  // });
 };
 
 export { aggregation, uploadAvatar, verifyUser, repeatEmailForVerifyUser };
