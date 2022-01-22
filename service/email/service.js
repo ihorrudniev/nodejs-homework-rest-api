@@ -22,7 +22,7 @@ class EmailService {
     const mailGenerator = new Mailgen({
       theme: "default",
       product: {
-        name: " groupe-35 FullStackOnline",
+        name: "groupe-35 FullStackOnline",
         link: this.link,
       },
     });
@@ -39,7 +39,7 @@ class EmailService {
             link: `${this.link}/api/users/verify/${verifyToken}`,
           },
         },
-        outro: "Hey! You have successfully registered! ",
+        outro: "Hey! You have successfully registered!",
       },
     };
     return mailGenerator.generate(email);
@@ -57,10 +57,10 @@ class EmailService {
       console.log(result);
       return true;
     } catch (error) {
-      console.error(error.messege);
+      console.error(error.message);
       return false;
     }
   }
 }
 
-export default { EmailService };
+export default EmailService;

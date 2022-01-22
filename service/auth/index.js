@@ -1,17 +1,17 @@
 import jwt from "jsonwebtoken";
-import repositoryUsers from "../../repository/users";
+import Users from "../../repository/users";
 
 const SECRET_KEY = process.env.JWT_SECRET_KEY;
 
 class AuthService {
   async isUserExist(email) {
-    const user = await repositoryUsers.findByEmail(email);
+    const user = await Users.findByEmail(email);
     return !!user;
   }
 
   async create(body) {
     const { id, name, email, role, avatar, verifyTokenEmail } =
-      await repositoryUsers.create(body);
+      await Users.create(body);
     return {
       id,
       name,
@@ -23,7 +23,7 @@ class AuthService {
   }
 
   async getUser(email, password) {
-    const user = await repositoryUsers.findByEmail(email);
+    const user = await Users.findByEmail(email);
     const isValidPassword = await user?.isValidPassword(password);
     if (!isValidPassword || !user?.isVerify) {
       return null;
@@ -39,8 +39,8 @@ class AuthService {
   }
 
   async setToken(id, token) {
-    await repositoryUsers.updateToken(id, token);
+    await Users.updateToken(id, token);
   }
 }
 
-export default AuthService;
+export default new AuthService();

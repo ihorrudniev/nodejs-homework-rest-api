@@ -6,7 +6,7 @@ class SenderSendgrid {
     sgMail.setApiKey(process.env.SENDGRID_API_KEY);
     return await sgMail.send({
       ...msg,
-      from: process.env.SENDER_SENDGRID_EMAIL,
+      from: process.env.SENDGRID_EMAIL,
     });
   }
 }
