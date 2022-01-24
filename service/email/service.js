@@ -5,16 +5,16 @@ class EmailService {
     this.sender = sender;
     switch (env) {
       case "development":
-        this.link = "https://6ec2-188-163-109-37.ngrok.io";
+        this.link = "https://bf87-188-163-109-37.ngrok.io";
         break;
       case "test":
-        this.link = "http://localhost:5000/";
+        this.link = "http://localhost:5000";
         break;
       case "production":
-        this.link = "http://heroku/";
+        this.link = "https://nodejs-rest-api-groupe-35.herokuapp.com";
         break;
       default:
-        this.link = "http://localhost:3000/";
+        this.link = "http://localhost:3000";
     }
   }
 
