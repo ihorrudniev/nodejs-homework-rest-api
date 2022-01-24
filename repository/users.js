@@ -24,7 +24,7 @@ const updateToken = async (id, token) => {
 const updateVerify = async (id, status) => {
   return await User.updateOne(
     { _id: id },
-    { isVarify: status, verifyTokenEmail: null }
+    { isVerify: status, verifyTokenEmail: null }
   );
 };
 

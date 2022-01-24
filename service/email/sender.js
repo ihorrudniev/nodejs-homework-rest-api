@@ -16,7 +16,7 @@ class SenderNodemailer {
     const config = {
       host: "smtp.meta.ua",
       port: 465,
-      secure: true, // upgrade later with STARTTLS
+      secure: true,
       auth: {
         user: process.env.USER_NODEMAILER,
         pass: process.env.PASSWORD_NODEMAILER,
